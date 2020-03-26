@@ -109,7 +109,8 @@ def postprocess(frame, outs):
         area = (left, top, left + width, top + height)
         cropped_img = image.crop(area)
         cropped_img=cropped_img.convert('RGB')
-        cropped_img.save("/home/harsh/machinelearning/HackCovid19/output"+'.jpg')
+        # provide path according to your PC
+        cropped_img.save("/home/harsh/machinelearning/HackCovid19/output"+'.jpg') 
         print("save done")
 
 # Process inputs
@@ -123,6 +124,7 @@ if (args.image):
         print("Input image file ", args.image, " doesn't exist")
         sys.exit(1)
     cap = cv.VideoCapture(args.image)
+    # provide path according to your PC
     image = Image.open('/home/harsh/machinelearning/HackCovid19/'+str(args.image))
     outputFile = args.image[:-4]+'_yolo_out_py.jpg'
 elif (args.video):
