@@ -19,6 +19,6 @@ the output file generated will be saved in /static
 
 PS:
 
-1) If some library is not found, please go through requirement.txt file.
+1)If some library is not found, please go through requirement.txt file.
 
-2)the flask app is working but not fully integrated with the project
+2)The flask app is working but not fully integrated with the project
