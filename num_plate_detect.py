@@ -1,3 +1,4 @@
+from PIL import Image
 import cv2 as cv
 import argparse
 import sys
@@ -15,7 +16,7 @@ parser = argparse.ArgumentParser(description='Object Detection using YOLO in OPE
 parser.add_argument('--image', help='Path to image file.')
 parser.add_argument('--video', help='Path to video file.')
 args = parser.parse_args()
-
+image = ""
 
 classesFile = "classes.names";
 
@@ -105,6 +106,12 @@ def postprocess(frame, outs):
         height = box[3]
         drawPred(classIds[i], confidences[i], left, top, left + width, top + height)
 
+        area = (left, top, left + width, top + height)
+        cropped_img = image.crop(area)
+        cropped_img=cropped_img.convert('RGB')
+        cropped_img.save("/home/harsh/machinelearning/HackCovid19/output"+'.jpg')
+        print("save done")
+
 # Process inputs
 winName = 'Deep learning object detection in OpenCV'
 cv.namedWindow(winName, cv.WINDOW_NORMAL)
@@ -116,6 +123,7 @@ if (args.image):
         print("Input image file ", args.image, " doesn't exist")
         sys.exit(1)
     cap = cv.VideoCapture(args.image)
+    image = Image.open('/home/harsh/machinelearning/HackCovid19/'+str(args.image))
     outputFile = args.image[:-4]+'_yolo_out_py.jpg'
 elif (args.video):
     # Open the video file
