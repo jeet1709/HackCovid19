@@ -17,4 +17,8 @@ the output file generated will be saved in /static
 
 4) go to http://127.0.0.1:5000/ on your browser to see the images
 
-PS:the flask app is working but not fully integrated with the project
+PS:
+
+1) If some library is not found, please go through requirement.txt file.
+
+2)the flask app is working but not fully integrated with the project
