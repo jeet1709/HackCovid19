@@ -7,6 +7,6 @@ if detection is to be done on photo then:
 
 1)python num_plate_detect.py --image image_name.jpg
 
-if detection is to be done on photo then:
+if detection is to be done on video then:
 
 2)python num_plate_detect.py --video video_name.mp4
