@@ -5,8 +5,16 @@ To execute num_plate_detect.py we need to pass argument in terminal in such mann
 
 if detection is to be done on photo then:
 
-1)python num_plate_detect.py --image image_name.jpg
+1) python num_plate_detect.py --image image_name.jpg
 
 if detection is to be done on video then:
 
-2)python num_plate_detect.py --video video_name.mp4
+2) python num_plate_detect.py --video video_name.mp4
+
+the output file generated will be saved in /static
+
+3) start flask server by executing python m.py on terminal
+
+4) go to http://127.0.0.1:5000/ on your browser to see the images
+
+PS:the flask app is working but not fully integrated with the project
